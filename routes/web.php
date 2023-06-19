@@ -46,9 +46,51 @@ Route::prefix('/tin-tuc')->group(function () {
 
 Route::get('/req',function (Request $req) {
     // Thông tin của req
-    echo dd($req);
-    return view('welcome');
-})->middleware('test_check');
+    // Lấy ra tất cả data gửi lên bất kể là phương thức nào POST,PUT,...
+    $allData = $req->all();
+
+    // Lấy ra path của api hiện tại
+    $path = $req->path();
+    
+    // Nếu path req đúng với 1 path -> return true
+    $isPath = $req->is('admin');
+
+    // Tất cả các path có prefix là admin đều thỏa mãn VD: admin/add, admin/edit, ...
+    $isPath2 = $req->is('admin/*');
+
+    // Lấy ra url hiện tại, Không bao gồm query trên url
+    $url = $req->url();
+
+    // Lấy ra method 
+    $method = $req->method();
+
+    // Địa chỉ ip
+    $ip = $req->ip();
+
+    // Thông tin biến SERVER
+    $server = $req->server();
+
+    // THông tin header
+    $header = $req->header();
+
+    // Lấy ra dữ liệu truyền vào từ req như body data hoặc query
+    $input = $req->input();
+
+    // Lấy ra query
+    $query = $req->query();
+
+    // KIểm tra xem 1 key có tồn tại hay không trong input (gồm cả body và query)
+    $isCheck = $req->has('key_name');
+
+    // Đưa tất cả dữ liệu vào trong 1 sesion đặc biệt chỉ tồn tại trong thời gian ngắn và sẽ mất khi load lại trang
+    $req->flash();
+
+    // Lấy data flash vừa lưu ra
+    $req->old('key_name');
+    // old('key_name'); helper có chức năng tương tự
+
+    return "<br />req data";
+});
 
 // === Cách gọi đến 1 controller ===
 Route::get('/test', [Controller::class,'test']);
