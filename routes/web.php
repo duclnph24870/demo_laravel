@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TestRequest;
+use Illuminate\Support\Facades\Validator;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,3 +97,57 @@ Route::get('/req',function (Request $req) {
 
 // === Cách gọi đến 1 controller ===
 Route::get('/test', [Controller::class,'test']);
+
+// respose trả về
+Route::get('/res', function () {
+    // tự động convert sang json và trả về
+    $arr = ['hello'=>'12345'];
+
+    // return $arr;
+    // return response('Hello',201);
+    return response()->json($arr,404)->header('Api-key','1089324734985723');
+});
+
+// validate req gửi lên
+Route::post('/validate',function (Request $req) {
+    $req->validate([
+        'name' => ['required','min:7'],
+        'price' => ['required']
+    ], [
+        'required' => "Trường :attribute là trường bắt buộc",
+        'min' => "Trường :attribute phải lớn hơn :min ký tự"
+    ]);
+
+    return 'Hello';
+});
+
+Route::post('/validate',function (TestRequest $req) {
+    dd($req);
+
+    return 'Hello';
+});
+
+Route::post('/validate',function (Request $req) {
+    $dataValidate = $req->all();
+    $rules = [
+        'name' => ['required','min:7'],
+        'price' => ['required']
+    ];
+    $message = [
+        'required' => "Trường :attribute là trường bắt buộc",
+        'min' => "Trường :attribute phải lớn hơn :min ký tự"
+    ];
+    $attribute = [
+        'name' => "tên sản phẩm",
+        'price' => 'giá sản phẩm'
+    ];
+
+    $validator = Validator::make($dataValidate,$rules,$message,$attribute);
+
+    // Nếu thất bại
+    if ($validator->failed()) {
+        return 'Thất bại';
+    }else {
+        return "Thành công";
+    }
+});
