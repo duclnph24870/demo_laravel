@@ -6,6 +6,7 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TestRequest;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -151,3 +152,5 @@ Route::post('/validate',function (Request $req) {
         return "Thành công";
     }
 });
+
+Route::get('/test_db', [HomeController::class,'index']);
