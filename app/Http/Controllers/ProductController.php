@@ -23,7 +23,7 @@ class ProductController extends Controller
 
     public function add () {
         $dataInsert  = [
-            'name' => 'Mô hình đồ chơi',
+            'name' => 'mô hình đồ chơi',
             'price' => 10000,
             'description' => 'Mô tả cho mô hình đồ chơi'
         ];

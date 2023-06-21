@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 /**
  * Quy ước đặt tên model
@@ -52,6 +53,20 @@ class ProductModel extends Model
 
     public function getProducts () {
         return DB::table($this->table)->get();
+    }
+
+    // ### accessors (như 1 bước xử lý dữ liệu của thuộc tính trước khi chúng được lưu vào db hoặc khi lấy ra từ db)
+    public function getNameAttribute ($value) {
+        return ucfirst($value).' hello';
+    }
+
+    // định nghĩa riêng cho cách xử lý get và set
+    public function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => $value.' Lấy ra',
+            set: fn (string $value) => $value.' Lưu vào',
+        );
     }
 }
 

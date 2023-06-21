@@ -17,7 +17,7 @@
 - [x] Biết sử dụng Form request để validate
 - [] API Resources: biết sử dụng để format dữ liệu API trả về
 - [] Tìm hiểu về Repository: flow, cách sử dụng
-- [] Model: cần biết khai báo fields, accessors, mutators, relations
+- [x] Model: cần biết khai báo fields, accessors, mutators, relations
 - [x] Hiểu và sử dụng các cách query trong laravel: Eloquent, Query builder
 - [] Migrations: biết viết migration để thêm, update table
 - [] Biết viết seeder, factory
