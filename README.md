@@ -24,3 +24,8 @@
 - [] Cần biết về Routing, Event, Notification, Queue, Middleware.
 
 4. [x] Biết viết doc API theo chuẩn Open API sử dụng Swagger
+
+## Queue
+- Là việc đẩy 1 công việc thực hiện cần nhiều thời gian ra một hàng đợi và sẽ được thực thi sau
+- https://files.slack.com/files-tmb/T024AM36285-F05DH05CZKL-c64a394a5e/image_480.png
+- Nó sẽ tương tự việc thực thi eventLoop của javascript
