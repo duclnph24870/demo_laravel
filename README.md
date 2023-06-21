@@ -16,11 +16,11 @@
 - [x] Controller: tìm hiểu về Resource Controller
 - [x] Biết sử dụng Form request để validate
 - [x] API Resources: biết sử dụng để format dữ liệu API trả về
-- [] Tìm hiểu về Repository: flow, cách sử dụng
+- [?] Tìm hiểu về Repository: flow, cách sử dụng
 - [x] Model: cần biết khai báo fields, accessors, mutators, relations
 - [x] Hiểu và sử dụng các cách query trong laravel: Eloquent, Query builder
-- [] Migrations: biết viết migration để thêm, update table
-- [] Biết viết seeder, factory
+- [x] Migrations: biết viết migration để thêm, update table
+- [x] Biết viết seeder, factory
 - [] Cần biết về Routing, Event, Notification, Queue, Middleware.
 
 4. [x] Biết viết doc API theo chuẩn Open API sử dụng Swagger
