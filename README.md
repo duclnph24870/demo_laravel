@@ -27,5 +27,5 @@
 
 ## Queue
 - Là việc đẩy 1 công việc thực hiện cần nhiều thời gian ra một hàng đợi và sẽ được thực thi sau
-- https://files.slack.com/files-tmb/T024AM36285-F05DH05CZKL-c64a394a5e/image_480.png
+- ![image](https://github.com/duclnph24870/demo_laravel/assets/109266379/7b731b90-7030-4c40-b765-6b450898086e)
 - Nó sẽ tương tự việc thực thi eventLoop của javascript
