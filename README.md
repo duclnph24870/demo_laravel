@@ -15,7 +15,7 @@
 - [x] Request Lifecycle
 - [x] Controller: tìm hiểu về Resource Controller
 - [x] Biết sử dụng Form request để validate
-- [] API Resources: biết sử dụng để format dữ liệu API trả về
+- [x] API Resources: biết sử dụng để format dữ liệu API trả về
 - [] Tìm hiểu về Repository: flow, cách sử dụng
 - [x] Model: cần biết khai báo fields, accessors, mutators, relations
 - [x] Hiểu và sử dụng các cách query trong laravel: Eloquent, Query builder
